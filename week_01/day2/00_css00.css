@@ -1,0 +1,17 @@
+
+/* 전체 선택자 = '*' */
+* {
+    font-weight: bold;
+}
+
+/* id 선택자 = '#' */
+#id1 {
+    color: black;
+    background-color: aquamarine;
+}
+
+/* class 선택자 = '.' */
+.class2, .class3 {
+    color: beige;
+    background-color: violet;
+}
