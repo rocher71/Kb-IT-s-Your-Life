@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box leftBox">
+            <a href="https://www.kbstar.com/" class="title">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFYplh9GoVJdeOsPhmkM8o5xstWrfFZrJ1f_p1AKFtJA&s" alt="국민은행">
+                KB 국민은행
+            </a>
+            <!-- <span class="title">KB 국민은행</span> -->
+            <div class="loginButton">
+                <a href="https://obank.kbstar.com/quics?page=C055068&_ga=2.81944019.493992574.1715145624-2021829659.1715145624&QSL=F#loading">
+                    <button>로그인</button>
+                </a>
+                <a href="https://obank.kbstar.com/quics?page=C018872&QSL=F&_ga=2.119167308.493992574.1715145624-2021829659.1715145624#loading">
+                    <button>인증센터</button>
+                </a>
+            </div>
+        </div>
+        
+        <ul class="box">
+            <li><a href="https://obank.kbstar.com/quics?page=obank&QSL=F&_ga=2.114932930.493992574.1715145624-2021829659.1715145624#loading">개인</a></li>
+            <li><a href="https://obiz.kbstar.com/quics?page=obiz&QSL=F&_ga=2.77880785.493992574.1715145624-2021829659.1715145624#loading">기업</a></li>
+            <li class="divider">|</li>
+            <li><a href="https://obank.kbstar.com/quics?page=C030037&QSL=F&_ga=2.77880785.493992574.1715145624-2021829659.1715145624#loading">금융상품</a></li>
+            <li class="divider">|</li>
+            <li><a href="https://omoney.kbstar.com/quics?page=C056123&_ga=2.156998014.493992574.1715145624-2021829659.1715145624&QSL=F#loading">자산관리</a></li>
+            <li><a href="https://kbland.kr/">부동산</a></li>
+            <li><a href="https://okbfex.kbstar.com/quics?page=opensn&QSL=F&_ga=2.156998014.493992574.1715145624-2021829659.1715145624">퇴직연금</a></li>
+            <li><a href="https://card.kbcard.com/CMN/DVIEW/HOAMCXPRIZZC0002">카드</a></li>
+            <li class="divider">|</li>
+            <li class="dropdown">전체서비스</li>
+            <li class="divider">|</li>
+            <li class="dropdown">GLOBAL</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></li>
+        </ul>
+    </div>
+    
+    <style>
+        .container{
+            max-width: 980px;
+            margin: auto;
+            margin-top: 30px;
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+            /* text-align: center; */
+        }
+
+        .box {
+            display: inline-block;
+        }
+
+        .leftBox {
+            width: 159px;
+        }
+
+        .title {
+            font-size: 18pt;            
+        }
+
+        .divider{
+            color: gainsboro;
+        }
+
+        .dropdown:hover {
+            cursor: pointer;
+        }
+        .dropdown::after {
+            content: "▼";
+            font-size: 8px;
+            color: black;
+            vertical-align: 15%;
+            margin-left: 5px;
+        }
+
+        .loginButton {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            margin-top: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #434343;
+        }
+
+        li {
+            font-size: 14px;
+            color: #434343;
+            float: left;
+            margin-left: 10px;
+        }
+
+        svg {
+            height: 14px;
+            width: 14px;
+        }
+
+        svg:hover {
+            cursor: pointer;
+        }
+
+        img {
+            width: 30px;
+            height: 20px;
+        }
+
+        button {
+            height: 26px;
+            padding: 0 10px;
+            border: 1px solid #dddddd;
+            background-color: white;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>

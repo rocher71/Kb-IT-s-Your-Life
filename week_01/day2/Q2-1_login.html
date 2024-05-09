@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title>
+</head>
+<body>
+    <h2>로그인 화면</h2>
+    <table>
+        <tr>
+            <th>아이디</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <th>패스워드</td>
+            <td><input type="password"></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="finalRow">
+                <button>서버로 전송</button>
+            </td>
+        </tr>
+    </table>
+    
+    <style>
+        body {
+            background-color: yellow;
+        }
+        table {
+            border: 1px solid;
+        }
+        th {
+            background-color: orange;
+            color: green;
+            width: 90px;
+            border: 1px solid;
+        }
+        td {
+            background-color: orange;
+            border: 1px solid;
+        }
+        .finalRow {
+            text-align: center;
+            background-color: greenyellow;
+        }
+        input {
+            width: 200px;
+        }
+        button {
+            background-color: red;
+            border-color: black;
+            color: green;
+        }
+    </style>
+</body>
+</html>
