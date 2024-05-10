@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin: 40px;
+        }
+        .item {
+            text-align: center;
+            height: 400px;
+            align-content: center;
+            border: 1px solid blue;
+        }
+        .item:nth-child(1) {
+            grid-column: 1 / span 2;
+            background-color: pink;
+            height: 200px;
+            font-size: 20pt;
+            font-weight: bold;
+        }
+        .item:nth-child(2) {
+            border: none;
+            height: 200px;
+        }
+        .item:nth-child(3) {
+            background-color: orange;
+            padding: 0 30px;
+            img {
+                height: 80%;
+            }
+        }
+        .item:nth-child(4) {
+            background-color: turquoise;
+            padding: 0 30px;
+            img {
+                height: 80%;
+            }
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        span {
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">오늘의 할인 메뉴는?</div>
+        <div class="item">
+            <img src="https://t4.ftcdn.net/jpg/05/85/29/13/360_F_585291338_0J8Q8vYbKDCu8yqqwAO8PsQZ4ESP2zd8.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="https://pics.clipartpng.com/midle/Hamburger_Fries_and_Cola_PNG_Clipart-511.png" alt="">
+            <span>15,000원 → 12,000원</span>
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2015/08/19/23/27/burger-896771_1280.png" alt="">
+            <span >13,000원 → 9,000원</span>
+        </div>
+    </div>
+</body>
+</html>
