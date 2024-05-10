@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>티켓 예약</title>
+</head>
+<body>
+    <script>
+        let ticketStatus = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+        let command = prompt('좌석번호 선택(1~14), 종료 0');
+        while(command != 0){
+            if(ticketStatus[command]){
+                alert('이미 예약된 자리입니다.');
+            } else {
+                ticketStatus[command] = true;
+            }
+            command = prompt('좌석번호 선택(1~14), 종료 0');
+        }
+        let reserved = '', amount = 0;
+        
+        ticketStatus.forEach((ticket, index) => {
+            // if(!ticket) return;
+            if(ticket){
+                reserved += index + ' ';
+                amount++;
+            }
+            
+        })
+        alert('예약된 좌석번호는 ' + reserved + '\n예매 금액은 ' + 5000 * amount + '원');
+
+        
+    </script>
+</body>
+</html>

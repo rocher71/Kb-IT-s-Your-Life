@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜</title>
+</head>
+<body>
+    <script>
+        let date = new Date();
+        let year = date.getFullYear();
+        let day = date.getDay();
+        let month = date.getMonth();
+
+        if(year >= 2000){
+            document.write(`${year}년 밀레니엄 세대시군요.<br>`);
+        } else {
+            document.write('밀레니엄 세대가 아니시군요.<br>');
+        }
+
+        if(day == 6 || day == 0){
+            document.write('쉬~~~~~~~~~~자<br>');
+        } else {
+            document.write('열~~심히 공부하자<br>');
+        }
+
+        if(month == 1){
+            document.write('28일까지<br>');
+        } else if (month == 3 || month == 5 || month == 8 || month == 10){
+            document.write('30일까지<br>');
+        } else {
+            document.write('31일까지<br>');
+        }
+    </script>
+</body>
+</html>

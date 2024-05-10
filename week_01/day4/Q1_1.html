@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+</head>
+<body>
+    <script>
+        const STARS_ANSWER = '**********';
+        let stars = prompt('별을 10개 찍어보세요.');
+        if(stars != STARS_ANSWER){
+            alert('별 10개가 아닙니다');
+        }
+
+        let string = prompt('원하는 기호를 입력하세요.');
+        let count = prompt('원하는 횟수를 넣으세요.');
+        let repeatString = '';
+        for(let i = 0; i < count; i++){
+            repeatString += string;
+        }
+        alert(repeatString);
+
+        let number = 0;
+        let input = prompt('1)증가 2)감소 3)종료를 선택해주세요.');
+        while(input != 3){
+            if(input == 1){
+                number += 1;
+                console.log('number : ', number);
+            } else if(input == 2){
+                number -= 1;
+                console.log('number : ', number);
+            }
+            input = prompt(`카운트: ${number}\n1)증가 2)감소 3)종료를 선택해주세요.`);
+            console.log('input : ', input);
+        }
+        if(input == 3){
+            alert(`시스템을 종료합니다. 현재까지의 카운트는 ${number}`);
+        }
+        
+        
+    </script>
+</body>
+</html>
