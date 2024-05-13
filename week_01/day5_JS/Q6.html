@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID 체크</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+        button {
+            margin-bottom: 10px;
+        }
+        #idCheck {
+            background-color: #f7a709;
+            border: none;
+            border-radius: 3px;
+            height: 30px;
+            padding: 0 10px;
+        }
+        #getCode {
+            background-color: blue;
+            color: white;
+            border-radius: 3px;
+            height: 30px;
+            padding: 0 10px;
+            border: 0;
+        }
+        input {
+            display: block;
+            height: 20px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+        p {
+            display: none;
+        }
+        #idFail, #idSuccess {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>ID 입력 : </div>
+    <input type="text" id="id">
+    <button id="idCheck">회원가입시 ID 중복 체크</button>
+    <p id="idFail">이미 사용 중인 ID입니다. 다른 ID를 선택해주세요.</p>
+    <p id="idSuccess">사용 가능한 ID입니다.</p>
+
+    <div>전화번호 입력 : </div>
+    <input type="text" id="number">
+    <button id="getCode">인증번호 받기</button>
+    <div id="code"></div>
+
+    <script>
+        const idArray = ['root', 'admin', 'apple'];
+
+        document.getElementById('idCheck').addEventListener('click', () => {
+            const id = document.getElementById('id');
+            if(idArray.includes(id.value)){
+                document.getElementById('idSuccess').style.display = 'none';
+                document.getElementById('idFail').style.display = 'block';
+            } else {
+                document.getElementById('idSuccess').style.display = 'block';
+                document.getElementById('idFail').style.display = 'none';
+            }
+        })
+
+        document.getElementById('getCode').addEventListener('click', () => {
+            let code = "인증번호 : ";
+            const number = document.getElementById('number').value;
+            const firstNumber = number.slice(0, 3);
+            console.log('firstNumber : ', firstNumber);
+            if(firstNumber == "010") code += "01";
+            else if(firstNumber == "011") code += "02";
+            else code += "03";
+
+            code += Math.floor(Math.random() * 900) +100;
+
+            document.getElementById('code').innerText = code;
+        })
+    </script>
+</body>
+</html>

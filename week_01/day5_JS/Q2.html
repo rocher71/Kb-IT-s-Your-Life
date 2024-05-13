@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        .id {
+            border-bottom: 1px solid gray;
+            padding: 10px;
+        }
+        .password {
+            padding: 10px;
+        }
+        #checkTrue, #checkFail {
+            padding: 10px;
+            display: none;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="id">
+        <span>아이디 입력 : </span>
+        <input type="text" id="id">
+    </div>
+    <div class="password">
+        <div>
+            <span>패스워드 : </span>
+            <input type="password" id="password">
+        </div>
+        <div>
+            <span>패스워드 확인 : </span>
+            <input type="password" id="passwordCheck">
+        </div>
+        
+        <button id="passwordButton">확인</button>
+    </div>
+    <div id="checkTrue">
+        <span>일치!!</span>
+        <img src="https://www.iconpacks.net/icons/2/free-check-icon-3278-thumb.png" alt="">
+    </div>
+    <div id="checkFail">
+        <span>불일치!!</span>
+        <img src="https://t4.ftcdn.net/jpg/05/41/18/85/360_F_541188582_r01jvSn85q8MvI5mR5WBEnGY2twjYvPq.webp" alt="">
+    </div>
+
+    <script>
+        const button = document.getElementById('passwordButton');
+
+        button.addEventListener('click', () => {
+            const checkTrue = document.getElementById('checkTrue');
+            const checkFail = document.getElementById('checkFail');
+            checkTrue.style.display = 'none';
+            checkFail.style.display = 'none';
+
+            const id = document.getElementById('id').value;
+            const password = document.getElementById('password').value;
+            const passwordCheck = document.getElementById('passwordCheck').value;
+            
+            // id check
+            if(id.length < 5){
+                alert('아이디 길이가 5 미만입니다. 다시 입력해주세요.');
+                return;
+            }
+
+            // password check
+            if(password == passwordCheck){
+                checkTrue.style.display = 'block';
+                checkFail.style.display = 'none';
+            } else {
+                checkTrue.style.display = 'none';
+                checkFail.style.display = 'block';
+            }
+        })
+    </script>
+</body>
+</html>

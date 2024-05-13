@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>떠나자!</title>
+    <style>
+        .buttons {
+            padding: 20px 30px;
+            border-bottom: 2px solid red;
+            button {
+                display: block;
+                width: 100%;
+            }
+            button {
+                height: 50px;
+            }
+            #jeju {
+                background-color: greenyellow;
+            }
+            #japan {
+                background-color: orange;
+            }
+            #hawaii {
+                background-color: blueviolet;
+            }
+        }
+        .text {
+            border-bottom: 2px solid red;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+        #jejuImg, #japanImg, #hawaiiImg {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button id="jeju">제주도로</button>
+        <button id="japan">일본으로</button>
+        <button id="hawaii">하와이로</button>
+    </div>
+    <div class="text">
+        <h3>힘들다!! 우리도 떠나자!!</h3>
+    </div>
+    <img src="https://www.agoda.com/wp-content/uploads/2024/02/Jeju-Island-hotels-things-to-do-in-Jeju-Island-South-Korea.jpg" alt="" id="jejuImg">
+    <img src="https://www.state.gov/wp-content/uploads/2019/04/Japan-2107x1406.jpg" alt="" id="japanImg">
+    <img src="https://www.gohawaii.com/sites/default/files/styles/image_gallery_bg_xl/public/hero-unit-images/Island-of-Hawaii-Accommodations.jpg?itok=6rQtOfzn" alt="" id="hawaiiImg">
+
+
+    <script>
+        const jejuImg = document.getElementById('jejuImg');
+        const japanImg = document.getElementById('japanImg');
+        const hawaiiImg = document.getElementById('hawaiiImg');
+
+        document.getElementById('jeju').addEventListener('click', () => {
+            jejuImg.style.display = 'block';
+            japanImg.style.display = 'none';
+            hawaiiImg.style.display = 'none';
+        });
+
+        document.getElementById('japan').addEventListener('click', () => {
+            jejuImg.style.display = 'none';
+            japanImg.style.display = 'block';
+            hawaiiImg.style.display = 'none';
+        });
+
+        document.getElementById('hawaii').addEventListener('click', () => {
+            jejuImg.style.display = 'none';
+            japanImg.style.display = 'none';
+            hawaiiImg.style.display = 'block';
+        });
+        
+
+        
+    </script>
+</body>
+</html>

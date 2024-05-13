@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림을 본 느낌은?</title>
+
+    <style>
+        .container {
+            padding-bottom: 40px;
+            h1 {
+                text-align: center;
+            }
+        }
+        .inputWrapper {
+            margin-top: 30px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid gainsboro;
+            input {
+                width: 50%;
+                border: 1px solid gainsboro;
+                margin-right: 0px;
+            }
+            button {
+                margin-left: 0px;
+                border: none;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                background-color: blue;
+                color: white;
+                width: 100px;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: row;
+            height: 35px;
+            padding: 1px;
+        }
+        #commentWrapper {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid red;
+            img {
+                width: 5%;
+                object-fit: contain;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>그림을 본 느낌은?</h1>
+        <img src="https://cdnimage.dailian.co.kr/news/202401/news_1704173805_1313277_m_1.jpeg" alt="">
+
+        <div class="inputWrapper">
+            <form>
+                <input type="text" id="comment">
+                <button id="button" type="button">댓글 달기</button>
+            </form>
+        </div>
+        
+        <div id="comments"></div>
+    </div>
+
+
+    <script>
+        const imgSrc = "https://st2.depositphotos.com/1858383/6935/v/450/depositphotos_69355121-stock-illustration-omega-3.jpg";
+        document.getElementById('button').addEventListener('click', () => {
+            const comments = document.getElementById('comments');
+            const commentWrapper = document.getElementById('commentWrapper');
+            const value = document.getElementById('comment').value;
+
+            const comment = document.createElement("div");
+            const mainImg = document.createElement("img");
+            const text = document.createElement("span");
+            text.innerText = value;
+
+            comment.appendChild(mainImg);
+            comment.appendChild(text);
+            mainImg.setAttribute("src", imgSrc);
+            comment.setAttribute("id", "commentWrapper");
+
+            comments.appendChild(comment);
+            
+            document.getElementById('comment').value = "";  
+        })
+
+    </script>
+</body>
+</html>

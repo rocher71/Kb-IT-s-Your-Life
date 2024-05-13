@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>결제금액</title>
+
+    <style>
+        .inputWrapper {
+            border-bottom: 2px solid red;
+            div {
+                margin: 10px;
+            }
+            input {
+                background-color: yellow;
+            }
+        }
+        .optionWrapper {
+            padding: 10px;
+            border-bottom: 2px solid red;
+        }
+        #button {
+            margin: 10px;
+            background-color: greenyellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="inputWrapper">
+        <div>
+            <span>구매상점 입력 : </span>
+            <input type="text" id="place">
+        </div>
+        <div>
+            <span>결제금액 입력 : </span>
+            <input type="text" id="amount">
+        </div>
+    </div>
+    <div class="optionWrapper">
+        <span>결제 수단 선택 : </span>
+        <select name="payment" id="payment">
+            <option value="transfer">계좌이체</option>
+            <option value="card">신용카드</option>
+            <option value="mobile">휴대폰 결제</option>
+        </select>
+    </div>
+    <button id="button">결제금액 계산</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('button').addEventListener('click', () => {
+            const place = document.getElementById('place').value;
+            const value = parseInt(document.getElementById('amount').value, 10);
+            const payment = document.getElementById('payment').value;
+
+            let resultString = "";
+            if(payment == 'transfer'){
+                resultString = `${place}에서 최종 결제금액: ${value}`;
+            } else if(payment == 'card'){
+                resultString = `${place}에서 최종 결제금액: ${value+1000}`;
+            } else if(payment == 'mobile'){
+                resultString = `${place}에서 최종 결제금액: ${value+2000}`;
+            }
+
+            document.getElementById('result').innerHTML = resultString;
+        })
+        
+    </script>
+</body>
+</html>

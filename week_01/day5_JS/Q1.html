@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <style>
+        .wrapper {
+            border-bottom: 1px solid black;
+            padding: 20px 10px;
+            /* display: flex; */
+            /* align-items: center; */
+            input {
+                margin: 0 10px;
+                border: none;
+                border-bottom: 1px solid gray;
+            }
+            #checkID {
+                display: none;
+                margin-top: 5px;
+                color: red;
+            }
+            button {
+                background-color: aquamarine;
+                border: 1px solid;
+                border-radius: 5px;
+                width: 100px;
+                height: 30px;
+            }
+        }
+        .idText {
+            display: flex;
+            flex-direction: column;
+            .checkID {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <span>
+            <span>아이디</span>
+            <input type="text" value="" id="idValue"></input>
+            <button id="idButton">아이디체크</button>
+        </span>
+        <div id="checkID">아이디 성공</div>
+    </div>
+
+    <div class="wrapper">
+        <span>지식인 검색어</span>
+        <input type="text" value="" id="searchNaverInput"></input>
+        <button id="searchNaverButton">지식인 검색</button>
+    </div>
+    <div class="wrapper">
+        <span>보고 싶은 웹툰 입력</span>
+        <input type="text" id="webtoonInput" value=""></input>
+        <button id="webtoonButton">웹툰 검색</button>
+    </div>
+
+    <script>
+
+        // id 체크
+        const checkID = document.getElementById('checkID');
+        const idButton = document.getElementById("idButton");
+        idButton.addEventListener("click", () => {
+            const idValue = document.getElementById('idValue').value;
+            console.log("idValue : ", idValue);
+            if(idValue == 'root'){
+                checkID.style.display = 'block';
+            }
+            else {
+                checkID.style.display = 'none';
+            }
+        })
+
+        // 지식인
+        const searchNaverButton = document.getElementById('searchNaverButton');
+        searchNaverButton.addEventListener('click', () => {
+            const searchNaverValue = document.getElementById('searchNaverInput').value;
+            window.open(`https://kin.naver.com/search/list.naver?query=${searchNaverValue}`, '_blank').focus();
+        })
+
+        //웹툰
+        const webtoonButton = document.getElementById('webtoonButton');
+        webtoonButton.addEventListener('click', () => {
+            const webtoonValue = document.getElementById('webtoonInput').value;
+            window.open(`https://comic.naver.com/search?keyword=${webtoonValue}`);
+        })
+    </script>
+</body>
+</html>
