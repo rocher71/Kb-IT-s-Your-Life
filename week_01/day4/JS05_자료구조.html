@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료구조</title>
+</head>
+<body>
+    <h1>Javascript - 자료구조</h1>
+    <hr>
+    <h2>배열(Array)</h2>
+    <div> - 데이터의 type을 구분하지 않고 데이터를 담는 자료구조, 크기를 자동으로 관리하는 것이 특징</div>
+    <hr><br>
+    <script>
+        //기본적인 사용법
+        let array = ['a', 'b', 'c', 'd'];
+
+        for(let i = 0; i<array.length; i++){
+            console.log(array[i]);
+        }
+
+        //다양한 type을 담을 수 있다.
+        let array1 = [10, 3.5, '홍길동', true, [1, 2, 3, 4, 5], document];
+        //index로 접근하는 방법
+        document.write('전체 데이터 : ' + array1.toString() + '<br>');
+        document.write('[0]  : ' + array1[0] + '<br>');
+        document.write('[1] : ' + array1[1] + '<br>');
+        document.write('[2] : ' + array1[2] + '<br>');
+        document.write('[3] : ' + array1[3] + '<br>');
+        document.write('[4] : ' + array1[4] + '<br>');
+        document.write('[5] : ' + array1[5] + '<br>');
+        document.write('[6] : ' + array1[6] + '<br>');
+        document.write('[7] : ' + array1[7] + '<br>');
+        document.write('[8] : ' + array1[8] + '<br>');
+        //js의 배열은 inidex가 음수이거나 넘어서도 error가 발생하지 않는다.
+
+        // 배열 순회하는 방법1 - 고전문법
+        for(let i = 0; i< array1.length; i++){
+            document.write('[' + i + '] : ' + array1[i] + '<br>');
+        }
+        document.write('<br');
+
+
+        for(let of aaray2 )
+
+    </script>
+</body>
+</html>
