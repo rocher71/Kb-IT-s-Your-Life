@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr><br>
+
+    <h3>6. Spread Operator(스프레드 연산자)</h3>
+    <div> - '...'를 사용하면 배열에서 전체 값 또는 일부 값을 다른 배열로 쉽게 복사할수 있다. </div>
+    <div> - 또한 객체에서도 적용 가능한데, 덮어쓰기 형태로 합쳐질수 있다. -> 매우 유용하게 활용 </div>
+    <div> - 함수 인자로 사용하는 경우, 가변 파라메터로 활용할수 있다. </div>
+    <br>
+    
+
+    <script>
+        //배열 활용법
+        const numbers1 = [1, 2, 3];
+        const numbers2 = [4, 5, 6];
+        
+
+        const numbers3 = [...numbers1, ...numbers2];
+        document.write('numbers1 : ' + numbers1 + ', length : ' + numbers1.length + '<br>');
+        document.write('numbers2 : ' + numbers2 + ', length : ' + numbers2.length + '<br>');
+        document.write('numbers3 : ' + numbers3 + ', length : ' + numbers3.length + '<br>');
+
+        const myCar = {
+            brand: 'BMW',
+            model: 'BMW 730i',
+            color: 'blue',
+        }
+
+        const updateCar = {
+            type: 'car',
+            year: 2024,
+            color: 'red',
+        }
+
+
+        const myUpdatedCar = {...myCar, ...updateCar};
+        console.log("myCar : ", myCar);
+        console.log("updateCar : ", updateCar);
+        console.log("myUpdatedCar : ", myUpdatedCar);
+
+        
+    </script>
+
+    <h3>7. Ternary Operator(삼항연산자)</h3>
+    <div>- JS에서 삼항연산자는 ES6부터 사용가능했다. </div>
+    <div>- Front 계열에서 삼항연산자는 자주 사용되는 문법이라 자주 활용된다.</div>
+    <div>- Syntax: condition ? expression if true : expression if false</div>
+    <br>
+
+    <script>
+        let name = '홍길동';
+        if(name == '홍길동'){
+            console.log("홍길동이 맞습니다.");
+        } else {
+            console.log("홍길동이 아닙니다.");
+        }
+
+        console.log(name == '홍길동' ? "홍길동이 맞습니다." : "홍길동이 아닙니다.");
+        console.log(`이름은 ${name} 입니다.`);
+    </script>
+
+    <h3>8. Short-circuit Evaluation </h3>
+    <div> - 논리식 문법으로 추가되었으나 특정값이 null 일 경우 defult 값을 할당할수 있는 방법으로 활용</div>
+    <div> - front 표현식에서 삼항연산자를 더 짧게 사용할수 있는 문법으로 최근 자주 사용 ★★★  </div>
+
+    <script>
+        let val1;
+        let val2 = val1 || '';
+        console.log("val2 : " + val2);
+        console.log("val2 : " + (val2 === '') );
+
+        val1 = 'test';
+        val2 = val1 || '';
+        console.log("val2 : " + val2);
+        console.log("val2 : " + (val2 === '') );
+
+        let color = null;
+        document.write(`<div style="color:${color || 'blue'}">CSS 값이 없는 경우 디폴트 blue로 지정</div>`);
+        color = "red";
+        document.write(`<div style="color:${color || 'blue'}">CSS 값이 있는 경우는 그 색상을 지정</div>`);
+    </script>
+
+
+    <h3>10. 템플릿 리터럴(Template literals)</h3>
+    <div> - JS 표현식으로 `${~}`을 통해 표현식을 활용할수 있다.</div>
+    <div> - `(백틱, backtick)을 통하여 태그를 포함할 표현식을 정의하고 ${~}로 변수를 대입한다. </div>
+    <div> - 기존 문자열의 결합으로 구성하였던 태그 방식보다 간편하게 사용할수 있다. </div>
+    <div> - Spring의 템플릿 엔진(jsp, Thymeleaf)와 결합되는 경우는 사용할수 없다! </div>
+    <div> - 문자열과 다르게 multi-line으로 활용할수 있다.</div>
+    <br>
+
+    <script>
+        let backgroundcolor = 'green';
+        let content = '안녕하세요?';
+
+        const template = `<div style="background:${backgroundcolor}">
+                                ${content}
+                            </div>`;
+        document.write(template || `<div>default</div>`);
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>
