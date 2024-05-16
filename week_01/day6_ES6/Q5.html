@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let object = {
+            name : "에너자이자",
+            total_price: 5000,
+            discount_price: 4700,
+            one_price: 2350,
+            arrive_date: "내일(수) 도착 보장",
+            rate: 50,
+            stack_money: 188,
+            print: function() {
+                console.log("할인 중!");
+            },
+            printInfo(){
+                console.log("name >> " + this.name
+                    + "\ntotal_price >> " + this.total_price
+                    + "\ndiscount_price >> " + this.discount_price
+                    + "\none_price >> " + this.one_price
+                    + "\narrive_date >> " + this.arrive_date
+                    + "\nrate >> " + this.rate
+                    + "\nstack_money >> " + this.stack_money
+                )
+            }
+        };
+
+        object.print();
+        object.printInfo();
+    </script>
+</body>
+</html>

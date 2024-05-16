@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    <script>
+        const test1 = (a, b) => {
+            return parseInt(a) + parseInt(b);
+        }
+        const test2 = (params) => {
+            console.log(params + "님 환영합니다.!");
+        }
+        const test3 = () => {
+            return "OK";
+        }
+
+        console.log(test1(30, 270));
+        test2("hong");
+        console.log(test3());
+    </script>
+</body>
+</html>

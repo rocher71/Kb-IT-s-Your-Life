@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 분할 할당</title>
+</head>
+<body>
+    <script>
+    function addContact3(...args){
+        console.log("name >> " + args[0]
+                + "\nphone >> " + args[1]
+                + "\nemail >> " + args[2]
+                + "\nnext_age >> " + (parseInt(args[3]) + 1)
+        );
+
+        return {name : args[0], tel: args[1], contact_email : args[2], next_age : args[3]};
+    }
+
+    let {name, tel, contact_email, next_age} = addContact3("지수", "010-2222-3333", "hera", 100);
+
+    console.log("name2 >> " + name
+            + "\ntel >> " + tel
+            + "\ncontact_email >> " + contact_email + "@email.com"
+            + "\nnext_age >> " + (parseInt(next_age) + 1)
+    );
+
+
+    </script>
+</body>
+</html>
