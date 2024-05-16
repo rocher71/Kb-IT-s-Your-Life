@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복권 문제</title>
+</head>
+<body>
+    <script>
+        function getRandom(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const visit = Array.from(Array(45), (_, index) => index+1 );
+
+        let lottery = [];
+        while(lottery.length < 6){
+            const randomIndex = getRandom(1, 45);
+            if(visit[randomIndex] == -1) continue;
+            
+            lottery.push(randomIndex);
+            visit[randomIndex] = -1;
+        }
+
+        console.log("복권번호 : ", lottery);
+    </script>
+</body>
+</html>

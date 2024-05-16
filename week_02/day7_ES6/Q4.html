@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토익문제</title>
+</head>
+<body>
+    <script>
+        function getRandom(min, max){
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const toeicAnswers = Array.from({length: 990}, () => getRandom(1, 4));
+        const toeicMyAnswers = Array.from({length: 990}, () => getRandom(1, 4));
+
+        let count = 0;
+        for(let i = 0; i<990; i++){
+            if(toeicAnswers[i] == toeicMyAnswers[i]) count++;
+        }
+        console.log("toeicAnswers : ", toeicAnswers);
+        console.log("toeicMyAnswers : ", toeicMyAnswers);
+        console.log("토익 점수 : ", count);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            resolve("Promise를 시작합니다.");
+        });
+
+        promise.then(msg => {
+            console.log(msg);
+            console.log("1 ==> 두 수를 랜덤하게 생성하여 더한 후 리턴?");
+            const num1 = Math.floor(Math.random()*10) + 1;
+            const num2 = Math.floor(Math.random()*10) + 1;
+            return [num1, num2];
+        }).then(numbers => {
+            console.log("2 ==> ", numbers[0] + numbers[1]);
+            console.log("두 수를 랜덤하게 생성하여 곱한 값을 리턴");
+            return numbers;
+        }).then(numbers => {
+            const [num1, num2] = numbers;
+            console.log("3 ==> ", num1+num2, ", ", num1*num2);
+            return numbers;
+        }).then(numbers => {
+            const [num1, num2] = numbers;
+            console.log("두 수의 합은 ", num1+num2);
+            console.log("두 수의 곱은 ", num1*num2);
+        })
+    </script>
+</body>
+</html>
